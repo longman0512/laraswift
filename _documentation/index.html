@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap Documentation Template For Software Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="../stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../cdn.jsdelivr.net/npm/summernote%400.8.16/dist/summernote-bs4.min.css" rel="stylesheet">
+    <!-- Google Font -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;display=swap" rel="stylesheet">
+
+    <!-- FontAwesome JS-->
+    <script defer src="plugins/fontawesome/js/all.min.js"></script>
+    <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="css/theme.css">
+    <link id="theme-style" rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/comment.css">
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.html">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.html" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- FAVICON -->
+
+</head>
+
+<body class="docs-page">
+  <header class="header fixed-top">
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+                                    <button id="docs-sidebar-toggler" class="docs-sidebar-toggler docs-sidebar-visible mr-2 d-xl-none" type="button">
+	                    <span></span>
+	                    <span></span>
+	                    <span></span>
+	                </button>
+                                    <div class="site-logo"><a class="navbar-brand" href="index.html"><img class="logo-icon mr-2" src="uploads/appLogo/logo-dark.png" alt="logo" width="200"></a></div>
+                </div><!--//docs-logo-wrapper-->
+              <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+
+                <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+                    <li class="list-inline-item"><a href="index.html" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a href="https://support.laraswift.dev/" data-toggle="tooltip" data-placement="bottom" title="Support"><i class="fa fa-info-circle fa-fw"></i></a></li>
+                                    </ul><!--//social-list-->
+              </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+        <div class="docs-wrapper">
+	    <div id="docs-sidebar" class="docs-sidebar">
+		    <div class="top-search-box d-lg-none p-3">
+            <form class="search-form">
+                <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+		    <nav id="docs-nav" class="docs-nav navbar">
+          <ul class="section-items list-unstyled nav flex-column pb-3">
+                              <li class="nav-item section-title"><a class="nav-link scrollto active" href="#installation"><span class="theme-icon-holder mr-2"><i class="fas fa-book"></i></span>Installation</a></li>
+                                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-ITj9b1LYtLmp7IL96sKq6gBq7IXNJ8">01. Server Requirements</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-tnRzGGpvqw72hYiAr7YLntJ7ayhVSh">02. Install on Localhost</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-tJ7ZcIXpqzKLgFtvlgbnOIzvovyJWp">03. Install on a Live Ser..</a></li>
+                                                                 <li class="nav-item section-title"><a class="nav-link scrollto active" href="#usage"><span class="theme-icon-holder mr-2"><i class="fas fa-book"></i></span>Usage</a></li>
+                                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-Vxs5dan07IxE8wc09gOSN6hQHzvkH3">Activity log</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-qT3xpkotkabRm3KMwkKSGN3wTu0qPc">Application Settings</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-L3Br95o0QP85LtDUo3xqLd6Pqi8fmV">Authentication and Access</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-dWGfyCigr2dtmsSABQxROay7PN4kmG">Contents</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-D9KyhzHTjCb4zrN4aOVxPoYtZpI599">Dashboard</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-g61C9Y0PwCif2jV4sRXjaLRUSTd8sX">Payment Management</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-Tqp4YSK1tGeYXUWNPZNh4EhEYPFMb8">Role and Permission Manag..</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-jPFtbnQB63hYGwLq44905ulQvCapiu">User Management</a></li>
+                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-tjy55LzJDZEPDNH3SnxLZEocBP3tnT">User Profile</a></li>
+                                                                 <li class="nav-item section-title"><a class="nav-link scrollto active" href="#support"><span class="theme-icon-holder mr-2"><i class="fas fa-book"></i></span>Support</a></li>
+                                                        <li class="nav-item"><a class="nav-link scrollto" href="#article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x">Change Directory/ File Pe..</a></li>
+                                                 			    </ul>
+		    </nav><!--//docs-nav-->
+	    </div><!--//docs-sidebar-->
+	    <div class="docs-content">
+		    <div class="container">
+                                    <article class="docs-article" id="installation">
+                <header class="docs-header">
+                  <h1 class="docs-heading">Installation<span class="docs-time">Last updated: 3 weeks ago</span></h1>
+                  <section class="docs-intro">
+                    <p>Installation instructions and set up for Laraswift.</p>
+                  </section><!--//docs-intro-->
+                </header>
+                                                        <section class="docs-section" id="article-ITj9b1LYtLmp7IL96sKq6gBq7IXNJ8">
+                        <h2 class="section-heading">01. Server Requirements</h2>
+                        <p><p style="line-height:2;"><span style="font-size:18px;"><b>Below is a list of server requirement to install LaraSwift Application</b></span><br></p>
+
+<ul><li><span style="font-size:14px;">PHP &gt;= 7.2.0</span></li><li><span style="font-size:14px;">BCMath PHP Extension</span></li><li><span style="font-size:14px;">Ctype PHP Extension</span></li><li><span style="font-size:14px;">JSON PHP Extension</span></li><li><span style="font-size:14px;">Mbstring PHP Extension</span></li><li><span style="font-size:14px;">OpenSSL PHP Extension</span></li><li><span style="font-size:14px;">PDO PHP Extension</span></li><li><span style="font-size:14px;">Tokenizer PHP Extension</span></li><li><span style="font-size:14px;">XML PHP Extension</span></li></ul></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-tnRzGGpvqw72hYiAr7YLntJ7ayhVSh">
+                        <h2 class="section-heading">02. Install on Localhost</h2>
+                        <p><h4><br></h4>
+
+<div><h4><span style="font-weight:bolder;"><span style="font-size:18px;">Laraswift Installation on Localhost</span></span><br></h4><p style="line-height:2;"><span style="font-size:14px;">After downloading and extracting the ZIP archive file to your computer, <span style="background-color:rgb(206,231,247);">create a database</span> on your local server where all database tables will be created &amp; stored. </span><span style="font-size:14px;">Next, ensure that permission level for </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span>, <span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders is <span style="background-color:rgb(206,231,247);">777</span> and also permission for <span style="background-color:rgb(206,231,247);">.env</span> file should be <span style="background-color:rgb(206,231,247);">777</span> before proceeding to installation. </span><a href="documentation.html#article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x"><span style="font-size:14px;">Click here</span></a><span style="font-size:14px;"> to see more about changing directory/file permission level.</span></p><h4><br></h4><h4><span style="font-family:inherit;font-size:11px;"><span style="font-size:18px;"><span style="font-weight:bolder;">﻿Quick Installation Steps</span> </span><span style="font-size:14px;">(Use these steps for a quick installation of Laraswift on your local server)</span></span><br></h4><ol><li><span style="font-size:14px;">Please carefully follow all the steps listed below one after the other.</span></li><li><span style="font-size:14px;">Extract Laraswift zip archive file into a folder</span></li><li><span style="font-size:14px;">Make sure to <span style="background-color:rgb(206,231,247);">create a database</span> where all the database tables will be stored</span></li><li><span style="font-size:14px;">Make sure that </span><span style="font-size:14px;">permission level for </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span><span style="font-size:14px;">, </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders is </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;"> and also permission for </span><span style="font-size:14px;background-color:rgb(206,231,247);">.env</span><span style="font-size:14px;"> file should be </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;">.</span></li><li><span style="font-size:14px;">Open a <span style="background-color:rgb(206,231,247);">terminal</span> and <span style="background-color:rgb(206,231,247);">navigate</span> to the folder Laraswift project is extracted to and start local server.</span></li><li><span style="font-size:14px;">Run the command </span><span style="background-color:rgb(206,231,247);font-size:14px;">php artisan serve</span><span style="font-size:14px;"> to start server.</span></li><li><span style="font-size:14px;">Open your browser to start installation. Go to  </span><span style="font-size:14px;background-color:rgb(206,231,247);">http://localhost:8000/</span><span style="font-size:14px;"> or the app url on your computer to access the installation wizard.</span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">When the installation wizard opens, click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Requirement</span><span style="font-size:14px;"> to check for the required php version and php extensions.</span></span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">Click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Permission</span><span style="font-size:14px;"> it checks for folder permissions, if all required folders for installation are with the 777 permission level click on</span><span style="background-color:rgb(206,231,247);font-size:14px;"> Configure Environment.</span><span style="font-weight:bolder;"><span style="font-size:14px;"> </span></span><a href="documentation.html#article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x"><span style="font-size:14px;">Cick here</span></a><span style="font-size:14px;"> to see how to change directory/file permission level.</span></span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">Click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Configure Environment</span><span style="font-size:14px;"> to configure all environment variables (.env) including the database details; ensure database details are accurate and  then click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save .env</span><span style="font-size:14px;">. </span><span style="font-weight:bolder;"><span style="font-size:14px;">NOTE: DO NOT </span></span><span style="font-size:14px;">click on </span><span style="font-weight:bolder;"><span style="font-size:14px;background-color:rgb(206,231,247);">Save and Install</span></span><span style="font-size:14px;"> yet.</span><span style="font-weight:bolder;"><span style="font-size:14px;"> </span></span><span style="font-size:14px;"> </span></span></li><li><span style="font-size:15.3px;"><span style="font-size:15.3px;"><span style="font-size:14px;">Finally, click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save and Install</span><span style="font-size:14px;">. If installation is successful, exit and you should be greeted with the Laraswift login screen. Your default admin credentials are: <span style="background-color:rgb(206,231,247);">Username: admin, Password: Password1.</span> Note that credentials are case sensitive.</span></span></span></li><li><span style="font-size:14px;">If there was an error during installation or there is need for re-installation, navigate to the </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage folder</span><span style="font-size:14px;"> and delete the </span><span style="background-color:rgb(206,231,247);font-size:14px;">installed</span><span style="font-size:14px;"> file you find there. After that, open <span style="background-color:rgb(206,231,247);">http://localhost:8000/</span> or the app url on your computer in your browser to begin the installation again, </span><span style="font-size:14px;">ensure to carefully follow all instructions.</span></li></ol><p><span style="font-size:.9rem;"><br></span></p><h4><span style="font-family:inherit;font-size:11px;"><span style="font-size:18px;"><span style="font-weight:bolder;">﻿Detailed Installation Steps with Screenshots </span></span><span style="font-size:14px;">(Use these steps for a more detailed installation of Laraswift on your local server)</span></span></h4><h4><span style="font-weight:bolder;font-size:18px;">Step 1: Installation Welcome Screen</span><br></h4><div><span style="font-size:14px;">Extract the ZIP archive on a folder in your computer, after extraction </span><span style="font-size:14px;">make sure you have created a database where all the tables will be stored, this is very essential and compulsory for your installation to be successful. Also ensure that </span><span style="font-size:14px;">permission level for</span><span style="font-size:14px;"> </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span><span style="font-size:14px;">, </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders is </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;"> and also permission for </span><span style="font-size:14px;background-color:rgb(206,231,247);">.env</span><span style="font-size:14px;"> file should be </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;">.</span></div><div><span style="font-size:14px;">Now, <span style="background-color:rgb(206,231,247);">open a terminal</span> and navigate to the folder where the Laraswift files have been extracted and run the <span style="background-color:rgb(206,231,247);">php artisan serve</span> command to start a local server. See screenshot below:</span></div><div><br></div><div><img src="uploads/articleImages/20200712082922.png" alt="20200712082922.png" style="width:603px;"><span style="font-size:14px;"><br></span></div><div><span style="font-size:14px;"><br></span></div><div><span style="font-size:14px;">When the command have started running and you get a message like you see in the screenshot above, </span><span style="font-size:14px;"><span style="background-color:rgb(206,231,247);">open your browser</span> to start installation. Go to  </span><span style="font-size:14px;background-color:rgb(206,231,247);">http://localhost:8000/install</span><span style="font-size:14px;"> to access installation wizard. </span></div><div><span style="font-size:14px;"><br></span><span style="font-size:14px;">The installation welcome screen looks like the image below.</span></div><div><br></div><div><img src="uploads/articleImages/20200529012436.jpg" alt="20200529012436.jpg"><br></div><p><span style="font-size:24px;"><span style="font-weight:bolder;"><br></span></span></p><p><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 2: Check System Requirements </span></span></p><p><span style="font-size:15.3px;"><span style="font-size:14px;">﻿After clicking on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Requirements</span><span style="font-size:14px;"> the next page of the installation wizard checks if your server meets the requirement for the installation.</span></span></p><p><img src="uploads/articleImages/20200529100054.png" alt="20200529100054.png"></p><p><span style="font-size:14px;">For proper installation of script all requirements which include PHP extension must be installed.</span><br></p><p><span style="font-size:15.3px;"><br></span></p><h4><span style="font-size:18px;">﻿</span><span style="font-weight:bolder;"><span style="font-size:18px;">Step 3: Directory Permission Check</span></span></h4><p><span style="font-size:14px;">﻿Next after System Requirement check it will be checking for Directory Permission, it is required that the bootstrap and storage directory has a permission level of 777. </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span><span style="font-size:14px;">, </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"><span style="font-size:14px;"> folders has </span><span style="background-color:rgb(206,231,247);font-size:14px;">777</span><span style="font-size:14px;">  permission and also permission for </span><span style="background-color:rgb(206,231,247);font-size:14px;">.env</span><span style="font-size:14px;"> file should be </span><span style="background-color:rgb(206,231,247);font-size:14px;">777</span><span style="font-size:14px;"> before proceeding.</span></span><br></p><h4><img src="uploads/articleImages/20200529020313.jpg" alt="20200529020313.jpg" style="color:inherit;font-family:inherit;font-size:1.35rem;"></h4><h4><span style="font-size:24px;"><span style="font-weight:bolder;"><br></span></span></h4><h4><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 4: Configuration of Environment variables</span></span></h4><p><span style="font-size:14px;">After clicking Configure Environment the page opens, to start configuring all the Environment variables click on Classic Text Editor.</span><br></p><p><img src="uploads/articleImages/20200529020413.jpg" alt="20200529020413.jpg"></p><p><span style="font-size:15.3px;"><br></span></p><p><span style="font-size:14px;">Next is to change all the variables using the Classic Environment Editor as shown in the screenshot below.</span></p><h4><img src="uploads/articleImages/20200529020444.jpg" alt="20200529020444.jpg"></h4><p><span style="font-size:15.3px;"><span style="font-weight:bolder;"><br></span></span></p><p><span style="font-size:15.3px;"><span style="font-weight:bolder;font-size:14px;">NOTE:</span><span style="font-size:14px;"> Ensure to set APP_ENV =production,  APP_DEBUG=false , APP_URL=https://yourdomain.com and Ignore APP_KEY,</span></span></p><p><span style="font-size:15.3px;"><span style="font-size:14px;">To activate </span><span style="background-color:rgb(206,231,247);font-size:14px;">Social Authentication</span><span style="font-size:14px;"> ensure you configure your </span><span style="background-color:rgb(206,231,247);font-size:14px;">Client_id, Client_secret</span><span style="font-size:14px;"> and </span><span style="background-color:rgb(206,231,247);font-size:14px;">Callback_url</span><span style="font-size:14px;">,</span><span style="font-weight:bolder;font-size:14px;"> </span><span style="font-size:14px;">t</span></span><span style="font-size:15.3px;"><span style="font-size:14px;">o activate </span><span style="background-color:rgb(206,231,247);font-size:14px;">Recaptcha</span><span style="font-size:14px;"> configure your </span></span><span style="font-size:14px;background-color:rgb(206,231,247);">sitekey</span><span style="font-size:14px;"> and </span><span style="font-size:14px;background-color:rgb(206,231,247);">secret</span><span style="font-size:14px;">.</span></p><p><span style="font-size:15.3px;"><span style="font-size:14px;">After setting all environment variables click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save .env</span><span style="font-size:14px;">. </span><span style="font-weight:bolder;font-size:14px;">NOTE: </span><span style="font-size:14px;">Do not click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save and Install</span><span style="font-size:14px;"> yet</span></span></p><p style="font-size:15.3px;"><img src="uploads/articleImages/20200529021735.jpg" alt="20200529021735.jpg" style="color:inherit;font-family:inherit;font-size:1.35rem;"></p><p><span style="font-size:15.3px;"><br></span></p><p><span style="font-size:14px;">After saving .env </span><span style="font-size:14px;">file, </span><span style="font-size:14px;">click on </span><span style="font-weight:bolder;font-size:14px;">Save and Install</span><span style="font-size:15.3px;"><span style="font-size:14px;"> to migrate database tables and get application ready. If you get the </span><span style="background-color:rgb(206,231,247);font-size:14px;">Application has been successfully installed</span><span style="font-size:14px;"> message, then congrats you've come a long way, your app is working now. E</span></span><span style="font-size:14px;"><span style="font-size:14px;">xit and you should be greeted with the Laraswift login screen.</span></span></p><p><span style="font-size:14px;"><span style="font-size:14px;">Your default admin credentials are: <span style="background-color:rgb(206,231,247);">Username: admin, Password: Password1</span>. Note that credentials are case sensitive. Enjoy!</span></span></p><h4><img src="uploads/articleImages/20200529021754.jpg" alt="20200529021754.jpg" style="width:997.41px;"></h4><p><br></p><h4><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 5: Re-installation of LaraSwift</span></span></h4><p><span style="font-size:14px;">If there was an error during installation or there is need for re-installation, navigate to the </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage folder</span><span style="font-size:14px;"> and delete the </span><span style="background-color:rgb(206,231,247);font-size:14px;">installed</span><span style="font-size:14px;"> file you find there. After that, </span><span style="font-size:14px;">open <span style="background-color:rgb(206,231,247);">http://localhost:8000/</span> or the app url on your computer in your browser to begin the installation again, </span><span style="font-size:14px;">ensure to carefully follow all instructions.</span></p><h4><br></h4></div></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-tJ7ZcIXpqzKLgFtvlgbnOIzvovyJWp">
+                        <h2 class="section-heading">03. Install on a Live Server</h2>
+                        <p><h4><b><br></b></h4>
+
+<div><h4><span style="font-weight:bolder;"><span style="font-size:18px;">Laraswift Installation on Live Server</span></span><br></h4><p style="font-size:14.4px;line-height:2;"><span style="font-size:14px;">After downloading and uploading the ZIP archive file to your server, <span style="background-color:rgb(206,231,247);">create a database</span> on your server where all database tables will be created &amp; stored. </span><span style="font-size:14px;">Next, ensure that permission level for </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span>, <span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders is <span style="background-color:rgb(206,231,247);">777</span> and also permission for <span style="background-color:rgb(206,231,247);">.env</span> file should be <span style="background-color:rgb(206,231,247);">777</span> before proceeding to installation. </span><a href="documentation.html#article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x"><span style="font-size:14px;">Click here</span></a><span style="font-size:14px;"> to see more about changing directory/file permission level.</span></p></div>
+
+<h4><br></h4>
+
+<h4><span style="font-family:inherit;font-size:11px;"><span style="font-size:18px;"><span style="font-weight:bolder;">﻿Quick Installation Steps</span> </span><span style="font-size:14px;">(Use these steps for a quick installation of Laraswift on your live server)</span></span><br></h4>
+
+
+
+<ol><li><span style="font-size:14px;">Please carefully follow all the steps listed below one after the other.</span></li><li><span style="font-size:14px;">Extract Laraswift zip archive file into your server directory, i.e where you want laraswift to be installed.</span></li><li><span style="font-size:14px;">Make sure to <span style="background-color:rgb(206,231,247);">create a database</span> where all the database tables will be stored</span></li><li><span style="font-size:14px;">Make sure that </span><span style="font-size:14px;">permission level for </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span><span style="font-size:14px;">, </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders is </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;"> and also permission for </span><span style="font-size:14px;background-color:rgb(206,231,247);">.env</span><span style="font-size:14px;"> file should be </span><span style="font-size:14px;background-color:rgb(206,231,247);">777</span><span style="font-size:14px;">.</span></li><li><span style="font-size:14px;">Open your browser to start installation. Go to  </span><span style="font-size:14px;background-color:rgb(206,231,247);">https://yourdomain.com/</span><span style="font-size:14px;"> to access the installation wizard.</span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">When the installation wizard opens, click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Requirement</span><span style="font-size:14px;"> to check for the required php version and php extensions.</span></span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">Click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Permission</span><span style="font-size:14px;"> it checks for folder permissions, if all required folders for installation are with the 777 permission level click on</span><span style="background-color:rgb(206,231,247);font-size:14px;"> Configure Environment.</span><span style="font-weight:bolder;"><span style="font-size:14px;"> </span></span><a href="documentation.html#article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x"><span style="font-size:14px;">Cick here</span></a><span style="font-size:14px;"> to see how to change directory/file permission level.</span></span></li><li><span style="font-size:15.3px;"><span style="font-size:14px;">Click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Configure Environment</span><span style="font-size:14px;"> to configure all environment variables (.env) including the database details; ensure database details are accurate and  then click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save .env</span><span style="font-size:14px;">. </span><span style="font-weight:bolder;"><span style="font-size:14px;">NOTE: DO NOT </span></span><span style="font-size:14px;">click on </span><span style="font-weight:bolder;"><span style="font-size:14px;background-color:rgb(206,231,247);">Save and Install</span></span><span style="font-size:14px;"> yet.</span><span style="font-weight:bolder;"><span style="font-size:14px;"> </span></span><span style="font-size:14px;"> </span></span></li><li><span style="font-size:15.3px;"><span style="font-size:15.3px;"><span style="font-size:14px;">Finally, click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save and Install</span><span style="font-size:14px;"> in the installation wizard to complete installation. If installation is successful, exit and you should be greeted with the Laraswift login screen. Your default admin credentials are: <span style="background-color:rgb(206,231,247);">Username: admin</span>, <span style="background-color:rgb(206,231,247);">Password: Password1</span>. Note that credentials are case sensitive.</span></span></span></li><li><span style="font-size:14px;">If there was an error during installation or there is need for re-installation, navigate to the </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage folder</span><span style="font-size:14px;"> and delete the </span><span style="background-color:rgb(206,231,247);font-size:14px;">installed</span><span style="font-size:14px;"> file you find there. After that, open <span style="background-color:rgb(206,231,247);">http://yourdomain.com/</span> in your browser to begin the installation again, </span><span style="font-size:14px;">ensure to carefully follow all instructions.</span></li></ol>
+
+<p><span style="font-size:14px;"><br></span></p>
+
+<h4><span style="font-family:inherit;font-size:11px;"><span style="font-size:18px;"><span style="font-weight:bolder;">Detailed Installation Steps with Screenshots </span></span><span style="font-size:14px;">(Use these steps for a more detailed installation of Laraswift on your live server)</span></span></h4>
+
+<h4><span style="font-weight:bolder;"><span style="font-size:18px;"><br></span></span></h4>
+
+<h4><span style="font-weight:bolder;"><span style="font-size:18px;">Step 1: Installation Welcome Screen</span></span></h4>
+
+<div><div><span style="font-size:14px;">Extract the Laraswift zip archive file into your server directory, i.e where you want Laraswift to be installed. Make sure you have <span style="background-color:rgb(206,231,247);">created a database</span> where all the tables will be stored, this is very essential and compulsory for your installation to be successful. Also ensure that permission level for <span style="background-color:rgb(206,231,247);">bootstrap</span>, <span style="background-color:rgb(206,231,247);">storage </span>&amp; <span style="background-color:rgb(206,231,247);">public</span> folders is <span style="background-color:rgb(206,231,247);">777 </span>and also permission for <span style="background-color:rgb(206,231,247);">.env</span> file should be <span style="background-color:rgb(206,231,247);">777</span>.</span></div><div><span style="font-size:14px;"><br></span></div><div><span style="font-size:14px;">Now open your browser to start installation. Go to <span style="background-color:rgb(206,231,247);">https://yourdomain.com/</span> to access the installation wizard.</span></div><div><span style="font-size:14px;">The installation welcome screen looks like the image below.</span></div></div>
+
+<div><br></div>
+
+<div><img src="uploads/articleImages/20200529012436.jpg" style="width:997.41px;" alt="20200529012436.jpg"><br></div>
+
+<p><span style="font-size:24px;"><b><span style="font-size:18px;"><br></span></b></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 2: Check System Requirements</span></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-size:14px;">﻿After clicking on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Check Requirements</span><span style="font-size:14px;"> the next page of the installation wizard checks if your server meets the requirement for the installation.</span></span></p>
+
+<p style="font-size:14.4px;"><img src="uploads/articleImages/20200529100054.png" alt="20200529100054.png"></p>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">For proper installation of script all requirements which include PHP extension must be installed.</span><br></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><br></span></p>
+
+<h4><span style="font-size:18px;">﻿</span><span style="font-weight:bolder;"><span style="font-size:18px;">Step 3: Directory Permission Check</span></span></h4>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">﻿Next after System Requirement check it will be checking for Directory Permission, it is required that the bootstrap and storage directory has a permission level of 777. </span><span style="font-size:14px;background-color:rgb(206,231,247);">bootstrap</span><span style="font-size:14px;">, </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage</span><span style="font-size:14px;"> &amp; </span><span style="font-size:14px;background-color:rgb(206,231,247);">public</span><span style="font-size:14px;"> folders has <span style="background-color:rgb(206,231,247);">777</span>  permission and also permission for <span style="background-color:rgb(206,231,247);">.env</span> file should be <span style="background-color:rgb(206,231,247);">777</span> before proceeding.</span><br></p>
+
+<h4><img src="uploads/articleImages/20200529020313.jpg" alt="20200529020313.jpg" style="color:inherit;font-family:inherit;font-size:1.35rem;"></h4>
+
+<h4><span style="font-size:24px;"><span style="font-weight:bolder;"><br></span></span></h4>
+
+<h4><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 4: Configuration of Environment variables</span></span></h4>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">After clicking Configure Environment the page opens, to start configuring all the Environment variables click on Classic Text Editor.</span><br></p>
+
+<p style="font-size:14.4px;"><img src="uploads/articleImages/20200529020413.jpg" alt="20200529020413.jpg"></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><br></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">Next is to change all the variables using the Classic Environment Editor as shown in the screenshot below.</span></p>
+
+<h4><img src="uploads/articleImages/20200529020444.jpg" alt="20200529020444.jpg"></h4>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-weight:bolder;"><br></span></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-weight:bolder;font-size:14px;">NOTE:</span><span style="font-size:14px;"> Ensure to set APP_ENV =production,  APP_DEBUG=false , APP_URL=https://yourdomain.com and Ignore APP_KEY,</span></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-size:14px;">To activate </span><span style="background-color:rgb(206,231,247);font-size:14px;">Social Authentication</span><span style="font-size:14px;"> ensure you configure your </span><span style="background-color:rgb(206,231,247);font-size:14px;">Client_id, Client_secret</span><span style="font-size:14px;"> and </span><span style="background-color:rgb(206,231,247);font-size:14px;">Callback_url</span><span style="font-size:14px;">,</span><span style="font-weight:bolder;font-size:14px;"> </span><span style="font-size:14px;">t</span></span><span style="font-size:15.3px;"><span style="font-size:14px;">o activate </span><span style="background-color:rgb(206,231,247);font-size:14px;">Recaptcha</span><span style="font-size:14px;"> configure your </span></span><span style="font-size:14px;background-color:rgb(206,231,247);">sitekey</span><span style="font-size:14px;"> and </span><span style="font-size:14px;background-color:rgb(206,231,247);">secret</span><span style="font-size:14px;">.</span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-size:14px;">After setting all environment variables click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save .env</span><span style="font-size:14px;">. </span><span style="font-weight:bolder;font-size:14px;">NOTE: </span><span style="font-size:14px;">Do not click on </span><span style="background-color:rgb(206,231,247);font-size:14px;">Save and Install</span><span style="font-size:14px;"> yet!</span></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><span style="font-size:14px;"><br></span></span></p>
+
+<p style="font-size:15.3px;"><img src="uploads/articleImages/20200529021735.jpg" alt="20200529021735.jpg" style="color:inherit;font-family:inherit;font-size:1.35rem;"></p>
+
+<p style="font-size:14.4px;"><span style="font-size:15.3px;"><br></span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">After saving .env </span><span style="font-size:14px;">file,</span><span style="font-size:14px;"> click on </span><span style="font-weight:bolder;font-size:14px;">Save and Install</span><span style="font-size:15.3px;"><span style="font-size:14px;"> to migrate database tables and get application ready. If you get the </span><span style="background-color:rgb(206,231,247);font-size:14px;">Application has been successfully installed</span><span style="font-size:14px;"> message, then congrats you've come a long way but your app is working now. E</span></span><span style="font-size:14px;">xit and you should be greeted with the Laraswift login screen. </span></p>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">Your default admin credentials are: <span style="background-color:rgb(206,231,247);">Username: admin, Password: Password1</span>. Note that credentials are case sensitive. Enjoy!</span></p>
+
+<h4><img src="uploads/articleImages/20200529021754.jpg" alt="20200529021754.jpg" style="width:997.41px;"></h4>
+
+<p style="font-size:14.4px;"><br></p>
+
+<h4><span style="font-size:24px;"><span style="font-weight:bolder;font-size:18px;">Step 5: Re-installation of LaraSwift</span></span></h4>
+
+<p style="font-size:14.4px;"><span style="font-size:14px;">If there was an error during installation or there is need for re-installation, navigate to the </span><span style="font-size:14px;background-color:rgb(206,231,247);">storage folder</span><span style="font-size:14px;"> and delete the </span><span style="background-color:rgb(206,231,247);font-size:14px;">installed</span><span style="font-size:14px;"> file you find there. After that, open <span style="background-color:rgb(206,231,247);">https://yourdomain.com/</span> in your browser to begin the installation again, ensure to carefully follow all instructions</span><span style="font-size:14px;">.</span></p></p>
+                      </section><!--//section-->
+                                                 </article>
+                          <article class="docs-article" id="usage">
+                <header class="docs-header">
+                  <h1 class="docs-heading">Usage<span class="docs-time">Last updated: 2 months ago</span></h1>
+                  <section class="docs-intro">
+                    <p>This is a step by step instruction on the app usage</p>
+                  </section><!--//docs-intro-->
+                </header>
+                                                        <section class="docs-section" id="article-Vxs5dan07IxE8wc09gOSN6hQHzvkH3">
+                        <h2 class="section-heading">Activity log</h2>
+                        <p><p><span style="font-size:24px;"><b>Admin Activity-Log</b></span></p>
+
+<p><span><span style="font-size:18px;">The admin activity log registers all activities carried out.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529022650.jpg" style="width:997.41px;" alt="20200529022650.jpg"><span><br></span></p>
+
+<p><b><span style="font-size:24px;">User Activity Log</span></b></p>
+
+<p><span style="font-size:18px;">The user activity log registers all the activities carried out by a particular user.</span></p>
+
+<p><img src="uploads/articleImages/20200529022705.jpg" style="width:997.41px;" alt="20200529022705.jpg"><span style="font-size:18px;"><br></span></p>
+
+<p><span><br></span><br></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-qT3xpkotkabRm3KMwkKSGN3wTu0qPc">
+                        <h2 class="section-heading">Application Settings</h2>
+                        <p><p><span>﻿</span><span style="font-size:24px;"><b>﻿Settings</b></span></p>
+
+<div><span style="font-size:18px;">The application settings is the control room for all functionality of the application. Controlled functionalities include </span><span style="font-size:18px;">App name, App logo, App them, Payment settings, Authentication settings and Application backup (Application file and Database)</span></div>
+
+<div><span style="font-size:18px;"><span><span style="font-size:18pt;font-family:Arial;background-color:transparent;font-weight:700;">App Name</span></span></span></div>
+
+<div><span style="font-size:18px;">Application name can be updated by admin</span></div>
+
+<div><img src="uploads/articleImages/20200529023621.jpg" style="width:997.41px;" alt="20200529023621.jpg"><span style="font-size:18px;"><br></span><br></div>
+
+
+
+<div><p><span style="font-size:24px;"><b>App Logo</b></span></p><p><span style="font-size:18px;">Application logo can be updated by admin</span></p><p><img src="uploads/articleImages/20200529023647.jpg" style="width:997.41px;" alt="20200529023647.jpg"><span style="font-size:18px;"><br></span></p><p><span style="font-size:24px;"><b>App Theme</b></span></p><p><span style="font-size:18px;">Application top-navbar can be update by admin</span></p><p><img src="uploads/articleImages/20200529023923.jpg" style="width:997.41px;" alt="20200529023923.jpg"><span style="font-size:18px;"><br></span></p><div><span style="text-align:justify;font-size:24px;"><b>Payment Settings</b></span><br></div></div>
+
+<div><p><span style="font-size:18px;">To activate payment admin is required to update Stripe Publish Key and Stripe Secret Key to enable the payment in the platform.</span></p><p><img src="uploads/articleImages/20200529024628.jpg" style="width:997.41px;" alt="20200529024628.jpg"><span style="font-size:18px;"><br></span></p></div>
+
+<p><span style="font-size:24px;"><b>Authentication Settings</b></span></p>
+
+<p><span style="font-size:18px;">Authentication settings the admin can enable/disable Two Factor Authentication, Captcha, and Email Verification.</span></p>
+
+<p><img src="uploads/articleImages/20200529024701.jpg" style="width:997.41px;" alt="20200529024701.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p><span style="font-size:24px;"><b>App Backup</b></span></p>
+
+<p><span><span style="font-size:18px;">App backup the </span><span style="font-size:18px;">application files</span><span style="font-size:18px;"> and </span><span style="font-size:18px;">database</span><span style="font-size:18px;"> can be backup and downloaded.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529031118.jpg" style="width:997.41px;" alt="20200529031118.jpg"><span><span style="font-size:18px;"><br></span></span></p>
+
+<p><span><span style="font-size:18px;"><br></span></span><span style="font-size:18px;"><br></span></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-L3Br95o0QP85LtDUo3xqLd6Pqi8fmV">
+                        <h2 class="section-heading">Authentication and Access</h2>
+                        <p><p><b><span style="font-size:24px;">﻿</span><span style="font-size:24px;">Login Page</span></b></p>
+
+
+
+<p><span style="font-size:18px;">After all proper installation users will be redirected to login. Login has multiple methods of authentication. Users can login using username/email and password also Social Authentication( Facebook, Twitter, Google ) with re-Captcha robot login protection (if enabled by admin).</span></p>
+
+
+
+
+
+<div><img src="uploads/articleImages/20200529032745.jpg" style="width:874.801px;" alt="20200529032745.jpg"><br></div>
+
+<div><p><span style="font-size:24px;"><b>Registration Page</b></span></p><p><span style="font-size:18px;">Registration form for users to create an account can be accessed from the login page by clicking Register a new membership. Registration form can be protected using re-Captcha (if enabled by admin).</span></p><span style="font-size:18px;">Note: If email verification is activated by admin in the application settings then after registration email will be sent to the new members for verification.Also applies to new members who sign-in with Social Authentication.</span></div>
+
+
+
+<div><img src="uploads/articleImages/20200529032804.jpg" style="width:874.801px;" alt="20200529032804.jpg"><span><br></span><p><span style="font-size:24px;"><b>Password Reset</b></span></p><span style="font-size:18px;">Password reset for forgotten password. Can be accessed from the login page by clicking I forgot my password. </span></div>
+
+
+
+
+
+<div><img src="uploads/articleImages/20200529045751.jpg" style="width:874.801px;" alt="20200529045751.jpg"><br></div>
+
+<div><span><span style="font-size:18px;">After entering and click on send password reset link email will be sent to user</span> </span></div>
+
+
+
+<div><img src="uploads/articleImages/20200529045820.jpg" style="width:874.801px;" alt="20200529045820.jpg"><br></div>
+
+<div><p><b><span style="font-size:24px;">Two Factor Authentication</span></b></p><p><span style="font-size:18px;">If two factor authentication (2FA) is enabled by admin in the Application Settings, then every user can activate 2FA in their profile. More details of personal 2FA activation will be discussed in the Profile Section. </span></p><p><img src="uploads/articleImages/20200529050149.jpg" style="width:874.801px;" alt="20200529050149.jpg"><br></p><div><span style="font-size:18px;">Verification code is obtained from Google Authenticator app, every user is required to install the app to activate 2FA which automatically generates codes for users whenever they need to sign-in.</span><br></div></div>
+
+
+
+<div><span><span><span style="font-size:18px;">Note: Google Authenticator is available on </span><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en"><span style="font-size:18px;">Andriod</span></a><span style="font-size:18px;"> and </span><a href="https://apps.apple.com/us/app/google-authenticator/id388497605"><span style="font-size:18px;">iOS</span></a></span><br></span><br></div>
+
+
+
+<div><br></div>
+
+<div><br></div></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-dWGfyCigr2dtmsSABQxROay7PN4kmG">
+                        <h2 class="section-heading">Contents</h2>
+                        <p><p><span style="font-size:24px;"><b>Premium Content</b></span></p>
+
+<p><span style="font-size:18px;">Premium content can be controlled by enabling/disabling of payment, if payment is activated only subscribed users will be able to access premium contents while if payment is disabled every user has access to premium content.</span></p>
+
+<p style="line-height:3;"><span style="font-size:18px;"><br></span></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-D9KyhzHTjCb4zrN4aOVxPoYtZpI599">
+                        <h2 class="section-heading">Dashboard</h2>
+                        <p><p><span style="font-size:24px;"><b>Admin Dashboard</b></span></p>
+
+
+
+<p><span style="font-size:18px;">The admin dashboard is more like the control room of the application that houses every functionality of the application. On the admin dashboard there are some of the application statistics which include total users, roles, permission, activity log, chart of users registration history and recent payment transactions (if payment is enabled by admin). This dashboard is strictly for the default administrator and any other user with the admin role</span></p>
+
+<p><img src="uploads/articleImages/20200529051142.jpg" style="width:874.801px;" alt="20200529051142.jpg"><span style="font-size:18px;"><br></span><br></p>
+
+
+
+<p><span style="font-size:24px;"><b>Default Dashboard</b></span></p>
+
+<p>﻿<span><span style="text-align:justify;font-size:18px;">The default dashboard is to give users a quick link to every section of the system like the activity-log, profile, article content published by admin and subscription</span><span style="text-align:justify;font-size:18px;">(if payment is enabled by admin).</span><span style="text-align:justify;font-size:18px;"> Other privileges are granted to the user depending on the permissions assigned to the </span><span style="text-align:justify;font-size:18px;">user role</span><span style="text-align:justify;font-size:18px;">. </span></span></p>
+
+<p><img src="uploads/articleImages/20200529051159.jpg" style="width:874.801px;" alt="20200529051159.jpg"><span><span style="text-align:justify;font-size:18px;"><br></span></span></p>
+
+<p><span><span style="text-align:justify;"><br></span></span></p>
+
+<p><span><br></span><br></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-g61C9Y0PwCif2jV4sRXjaLRUSTd8sX">
+                        <h2 class="section-heading">Payment Management</h2>
+                        <p><p style="text-align:justify;"><span style="font-size:24px;"><b>Payment</b></span></p>
+
+<p style="text-align:justify;"><span style="font-size:18px;">Lara-swift payment is built to manage stripe recurring payments, <b>managing </b></span><span style="font-size:18px;"><b>subscription</b> <b>plans</b>,</span><span style="font-size:18px;"><b>subscribed users</b></span><span style="font-size:18px;"> and</span><span style="font-size:18px;"><b>income balance</b></span><span style="font-size:18px;"> if payment is enabled by admin  in the application settings.</span></p>
+
+<p style="text-align:justify;"><span style="font-size:24px;"><b>Subscription Plan Management</b></span></p>
+
+<p style="text-align:justify;"><span style="font-size:18px;">Subscription plan can be created, edited and deleted and has its concurrent effect in the Stripe Dashboard.</span></p>
+
+<p style="text-align:justify;"><img src="uploads/articleImages/20200529060524.jpg" style="width:874.801px;" alt="20200529060524.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p style="text-align:justify;"><span style="font-size:24px;"><b>Creating Plan</b></span></p>
+
+<p style="text-align:justify;"><span style="font-size:18px;">Creating a plan, the following are the required plan name, plan description, amount, plan interval (daily, weekly, monthly and yearly), for the plan interval count it specifies the rate of the interval that is it specify the period before the next charge. Assuming interval is selected is </span><span style="font-size:18px;">monthly</span><span style="font-size:18px;"> and interval count is </span><span style="font-size:18px;">2</span><span style="font-size:18px;">, therefore the subscription plan will be charging users every </span><span style="font-size:18px;">2 Months</span><span style="font-size:18px;"> before the next charge. Also a plan trial period is allowed for each plan in which a user tries the Premium Content.</span></p>
+
+
+
+<p><span style="font-size:18px;"><b>Editing Subscription Plan: </b></span><span style="font-size:18px;">Only the name and description of a subscription plan is allowed to be edited.</span></p>
+
+<p><img src="uploads/articleImages/20200529060816.jpg" style="width:874.801px;" alt="20200529060816.jpg"><span style="font-size:18px;"><br></span></p>
+
+<p><span style="font-size:24px;"><b>Payment Income Management</b></span></p>
+
+<p><span style="font-size:18px;">List of all payments made by users on the platform.</span></p>
+
+<p><img src="uploads/articleImages/20200529060849.jpg" style="width:874.801px;" alt="20200529060849.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p><span style="font-size:24px;"><b>Subscribed User Management</b></span></p>
+
+<p><span style="font-size:18px;">Subscribed user management gives a list of subscribed users indicating subscription detail of user also admin can cancel user subscription and also generate payment invoice of a subscriber.</span></p>
+
+
+
+<p><img src="uploads/articleImages/20200529060920.jpg" style="width:874.801px;" alt="20200529060920.jpg"><span style="font-size:18px;"><br></span></p>
+
+<p><span style="font-size:18px;"><br></span></p>
+
+<p><span style="font-size:18px;"><br></span></p>
+
+<p><span style="font-size:18px;"><br></span></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-Tqp4YSK1tGeYXUWNPZNh4EhEYPFMb8">
+                        <h2 class="section-heading">Role and Permission Management</h2>
+                        <p><p><span style="font-size:24px;"><b>Roles management</b></span></p>
+
+
+
+<p><span style="font-size:18px;">Every user is assigned a particular role and different permissions are attached to the role which determines the privilege of the user to access different parts of the application. By default Lara-Swift has </span><span style="font-size:18px;">admin</span><span style="font-size:18px;"> and </span><span style="font-size:18px;">user</span><span style="font-size:18px;"> roles.</span></p>
+
+<p><img src="uploads/articleImages/20200529062435.jpg" style="width:874.801px;" alt="20200529062435.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p><span><span style="font-size:18px;">To manage permissions attached to a particular role <b>add permission</b> button is clicked</span></span></p>
+
+
+
+<p><span style="font-size:24px;"><b>Permission management</b></span></p>
+
+<p><span style="font-size:18px;">Permissions are attached to roles and they determine the privilege access of each role. Lara-swift has some default permissions </span><span style="font-size:18px;">user-activity, manage-user, manage-permission, manage-role, manage-setting, manage-payment-gateway.</span></p>
+
+<p><img src="uploads/articleImages/20200529063208.jpg" style="width:874.801px;" alt="20200529063208.jpg"><span style="font-size:18px;"><br></span></p>
+
+<p><span style="font-size:18px;">NOTE: </span><span style="font-size:18px;">All default permissions cannot be deleted.</span></p>
+
+<p><img src="uploads/articleImages/20200529063227.jpg" style="width:874.801px;" alt="20200529063227.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p><span style="font-size:18px;"><br></span></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-jPFtbnQB63hYGwLq44905ulQvCapiu">
+                        <h2 class="section-heading">User Management</h2>
+                        <p><p><span style="font-size:24px;"><b>Admin User Management</b></span></p>
+
+<p><span><span style="font-size:18px;">The admin role has a permission for users management </span><span style="font-size:18px;">manage-users</span><span style="font-size:18px;">. The admin has the ability to impersonate any user and also update users account and login details.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529072932.jpg" style="width:874.801px;" alt="20200529072932.jpg"><span><span style="font-size:18px;"><br></span></span></p>
+
+<p><span><span style="font-size:18px;">For admin to impersonate any user the </span><span style="font-size:18px;">impersonate</span><span style="font-size:18px;"> button is clicked for that particular user as seen below.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529073050.jpg" style="width:874.801px;" alt="20200529073050.jpg"><span><span style="font-size:18px;"><br></span></span></p>
+
+
+
+<p><span style="font-size:18px;">To exit user impersonation Exit Impersonation is clicked on the top-right of the nav-bar.</span></p>
+
+<p><img src="uploads/articleImages/20200529073427.jpg" style="width:874.801px;" alt="20200529073427.jpg"><span style="font-size:18px;"><br></span></p>
+
+<p><span><span style="font-size:18px;"><span><span style="font-size:11pt;font-family:Arial;background-color:transparent;"><br></span></span></span></span></p>
+
+<p><br></p></p>
+                      </section><!--//section-->
+                                        <section class="docs-section" id="article-tjy55LzJDZEPDNH3SnxLZEocBP3tnT">
+                        <h2 class="section-heading">User Profile</h2>
+                        <p><p><span style="font-size:24px;"><b>Profile</b></span></p>
+
+<p><span style="font-size:18px;">User profile is where logged in users can view and update their profile details such as the Bio-data, Login details and Two Factor Authentication (2FA) </span><span style="font-size:18px;"> if enabled by admin.</span></p>
+
+<p><span style="font-size:18px;">If 2FA is disabled the user profile has 2 tabs to update profile, Account detail and Login details</span></p>
+
+<p><img src="uploads/articleImages/20200529074449.jpg" style="width:874.801px;" alt="20200529074449.jpg"><span style="font-size:18px;"><br></span></p>
+
+
+
+<p><span style="font-size:18px;">If 2FA is enabled by admin the user profile contains 3 tabs which include the addition of Two Factor Auth tab to activate 2FA in the logged in users profile.</span></p>
+
+<p><span><span style="font-size:24px;"><b>Uploading Profile Avatar</b></span></span></p>
+
+<p><img src="uploads/articleImages/20200529074649.jpg" style="width:874.801px;" alt="20200529074649.jpg"><span><span style="font-size:24px;"><b><br></b></span></span></p>
+
+<p><span style="font-size:24px;"><b>Activation and Deactivation of Two Factor Authentication</b></span></p>
+
+<p><span><span style="font-size:18px;">Activating the 2FA Step by Step instruction if gotten by clicking </span><span style="font-size:18px;">Setup Instruction</span></span></p>
+
+<p><img src="uploads/articleImages/20200529081154.jpg" style="width:874.801px;" alt="20200529081154.jpg"><span><span style="font-size:18px;"><br></span></span></p>
+
+
+
+<p><span><span style="font-size:18px;">Click on </span><span style="font-size:18px;">Activate 2FA</span><span style="font-size:18px;"> to activate, a QRCode will be generated and scan the QRCode using </span><span style="font-size:18px;">Google Authenticator or Authy</span><span style="font-size:18px;"> mobile app.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529081229.jpg" style="width:874.801px;" alt="20200529081229.jpg"><span><span style="font-size:18px;"><br></span></span></p>
+
+
+
+<p><span><span style="font-size:18px;">Enter the code generated code and click on </span><span style="font-size:18px;">Enable 2FA</span><span style="font-size:18px;"> to enable 2FA. To disable it, generated code from Google Authenticator or Authy which you used in Enabling it is required and user account password.</span></span></p>
+
+<p><img src="uploads/articleImages/20200529081257.jpg" style="width:874.801px;" alt="20200529081257.jpg"><br></p>
+
+<p><br></p></p>
+                      </section><!--//section-->
+                                                 </article>
+                          <article class="docs-article" id="support">
+                <header class="docs-header">
+                  <h1 class="docs-heading">Support<span class="docs-time">Last updated: 3 weeks ago</span></h1>
+                  <section class="docs-intro">
+                    <p>This category is for all short link supports</p>
+                  </section><!--//docs-intro-->
+                </header>
+                                                        <section class="docs-section" id="article-o4WSOQSwFLyNufLuzimMdfvOIjQS4x">
+                        <h2 class="section-heading">Change Directory/ File Permission</h2>
+                        <p><p style="font-size:15.3px;"><span style="font-size:15.3px;">﻿﻿For the installation wizard to run properly you need to give 777 level permission to bootstrap, storage, public. Before installation ensure .env file is given 777 permission and after installation is completed change the permission level of .env file back to 644.  </span>Directory/File permission can be changed using the following command-line in CLI </p>
+
+<p style="font-size:15.3px;"><span style="font-size:15.3px;">Example:</span></p>
+
+<p style="font-size:15.3px;"><span style="font-size:15.3px;"><span style="font-weight:bolder;"><i>﻿chmod -R 777 public</i></span></span></p>
+
+<p style="font-size:15.3px;"><span style="font-weight:bolder;font-size:15.3px;"><i>﻿chmod -R 777 storage</i></span></p>
+
+<p style="font-size:15.3px;"><span style="font-weight:bolder;font-size:15.3px;"><i>﻿chmod -R 777 bootstrap</i></span></p>
+
+<p style="font-size:15.3px;"><i><span style="font-weight:bolder;">﻿chmod -R 777 .env</span></i><span style="font-size:15.3px;"><span style="font-weight:bolder;"><i><br></i></span></span></p>
+
+<p style="font-size:15.3px;"><span style="font-size:15.3px;">After changing the file permission level the steps below to run installation wizard.</span></p></p>
+                      </section><!--//section-->
+                                                 </article>
+                      
+		    </div>
+	    </div>
+    </div><!--//docs-wrapper-->
+  <footer class="footer">
+    <div class="footer-bottom text-center py-5">
+        <small class="theme-link">Copyright &copy; 2020 <a href="https://laraswift.dev/">LaraSwift</a>.</strong> All rights
+        reserved.</small>
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script src="../cdn.jsdelivr.net/npm/summernote%400.8.16/dist/summernote-bs4.min.js"></script>
+      <script src="../cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="js/highlight-custom.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/ekko-lightbox.min.js"></script>
+    <script src="js/docs.js"></script>
+  <script type="text/javascript" src="js/summernote.js"></script>
+</body>
+
+</html>
