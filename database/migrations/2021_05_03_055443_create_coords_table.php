@@ -17,6 +17,10 @@ class CreateCoordsTable extends Migration
             $table->bigIncrements('id');
             $table->double('latitude');
             $table->double('longitude');
+            $table->integer('user_id');
+            $table->string('variety_slug');
+            $table->string('share_status');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

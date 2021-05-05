@@ -18,6 +18,7 @@ use \Stripe\Exception\ApiConnectionException;
 use \Stripe\Exception\ApiErrorException;
 use \Stripe\Exception\RateLimitException;
 use \Stripe\Exception\InvalidRequestException;
+use App\Models\Coords;
 
 class DashboardController extends Controller
 {
@@ -26,13 +27,12 @@ class DashboardController extends Controller
     private $subscriptions;
     private $stripeCustomer;
 
-
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(Charts $chart, User $user, Subscriptions $subscriptions, StripeCustomer $stripeCustomer)
+    public function __construct(Charts $chart, User $user, Subscriptions $subscriptions, StripeCustomer $stripeCustomer, Coords $position)
     {
         if (setting('email_verification')) {
             $this->middleware(['verified']);
@@ -40,7 +40,7 @@ class DashboardController extends Controller
         $this->middleware(['auth','web','2fa']);
 
         $this->user = $user;
-
+        $this->coords = $position;
         $this->chart = $chart;
         $this->subscriptions = $subscriptions;
         $this->stripeCustomer = $stripeCustomer;
@@ -56,7 +56,7 @@ class DashboardController extends Controller
         if ($this->isAdmin()) {
             return $this->adminDashboard();
         }
-
+        
         return $this->defaultDashboard();
     }
 
@@ -118,7 +118,10 @@ class DashboardController extends Controller
      */
     private function defaultDashboard()
     {
-        return view('dashboard.default');
+        $coords = $this->coords->where('user_id', auth()->user()->id)->get();
+        return view('dashboard.default', [
+            'tree_count' =>count($coords)
+        ]);
     }
 
     /**

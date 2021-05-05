@@ -132,7 +132,7 @@
 
           @role('users')
           <li class="nav-item">
-            <a href="/trees/add" class="nav-link {{request()->is('activity-log*')? 'sidebar-active':''}}">
+            <a href="/trees" class="nav-link {{request()->is('activity-log*')? 'sidebar-active':''}}">
               <i class="nav-icon fa fa-tree"></i>
               <p>
                 {{ __('app.planted_tree') }}
@@ -267,7 +267,7 @@
           </li>
           @endrole
 
-          <li class="nav-header">{{ (setting('stripe_status'))? __('app.premium_content_big'):__('app.content_big') }}</li>
+          {{-- <li class="nav-header">{{ (setting('stripe_status'))? __('app.premium_content_big'):__('app.content_big') }}</li> --}}
 
           @role('admin')
           <li class="nav-item has-treeview">
@@ -296,17 +296,15 @@
           </li>
           @endrole
           @unlessrole('admin')
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="/premium-content" class="nav-link {{request()->is('premium-content*')? 'sidebar-active':''}}">
               <i class="nav-icon fa fa-file-o"></i>
               <p>
                     {{ __('app.content') }}
               </p>
             </a>
-          </li>
+          </li> --}}
           @endunlessrole
-          <li class="nav-header">{{ __('app.crud_menu') }}</li>
-            @include('layouts.menu')
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

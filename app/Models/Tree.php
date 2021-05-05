@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tree extends Model
 {
-    protected $fillable = ['caption','media','variety_slug', 'share_status', 'quantity', 'coords'];
+    protected $fillable = ['caption','media', 'coords', 'media_type'];
     use HasFactory;
 }

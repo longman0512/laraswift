@@ -54,7 +54,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">{{__('app.planted_tree')}}</span>
                 <span class="info-box-number">
-                  0
+                  {{$tree_count}}
                 </span>
               </div>
               <!-- /.info-box-content -->

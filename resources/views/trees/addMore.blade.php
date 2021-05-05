@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title','Trees Add')
+@section('title','Trees Add more image/video')
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -14,7 +14,7 @@
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="/">{{__('app.home')}}</a></li>
             <li class="breadcrumb-item"><a href="/trees">{{__('app.planted_tree')}}</a></li>
-            <li class="breadcrumb-item active">{{__('app.planted_add')}}</li>
+            <li class="breadcrumb-item active">{{__('app.add_more_pic_vid')}}</li>
           </ol>
         </div>
       </div>
@@ -22,9 +22,10 @@
   </section>
 
   <section class="content">
-    <form class="form-horizontal" method="POST" action="/trees/create" enctype="multipart/form-data" onsubmit="return validateForm()">
+  <form class="form-horizontal" method="POST" action="/trees/add_more" enctype="multipart/form-data" onsubmit="return validateForm()">
       @csrf
       @method('put')
+      <input type="hidden" name="coord_id" value="{{$info->id}}"
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
@@ -61,6 +62,7 @@
                     <a class="nav-link white" id="account-details-tab" role="tab" aria-controls="account-details">{{__('app.planting_detail')}}</a>
                   </li>
                   <li class="nav-item mb-3 mr-2">
+                    @if($info->share_status == 'public')
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="share" id="public" onclick="updateShareStatus('public')" checked />
                       <label class="form-check-label" for="flexRadioDefault1"> Public </label>
@@ -69,6 +71,17 @@
                       <input class="form-check-input" type="radio" name="share" id="private" onclick="updateShareStatus('private')" />
                       <label class="form-check-label" for="flexRadioDefault2"> Private </label>
                     </div>
+                    @else
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="share" id="public" onclick="updateShareStatus('public')"  />
+                      <label class="form-check-label" for="flexRadioDefault1"> Public </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="share" id="private" onclick="updateShareStatus('private')" checked/>
+                      <label class="form-check-label" for="flexRadioDefault2"> Private </label>
+                    </div>
+                    @endif
+                    
                     <input type="hidden" name="share_status" id="share_status" value="public" />
                   </li>
                 </ul>
@@ -84,22 +97,20 @@
                       <div class="col-md-6 mb-1 mt-2">
                         <div><label class="label-block">{{__('app.tree_variety')}}:</label></div>
                         <select name="variety" id="variety" class="form-control form-control-inline-block">
-                          @foreach ($categories as $category)
-                          <option value="{{$category->slug}}">{{$category->name}}</option>
-                          @endforeach
+                        <option>{{$info->variety_slug}}</option>
                         </select>
                       </div>
                       <div class="col-md-6 mt-2">
                         <div><label class="label-block">{{__('app.latitude')}}:</label></div>
-                        <input type="text" name="latitude" id="latitude" class="form-control" readonly>
+                        <input type="text" name="latitude" id="latitude" class="form-control" readonly value="{{$info->latitude}}">
                       </div>
                       <div class="col-md-6 mt-2">
                         <div><label class="label-block">{{__('app.quantity')}}:</label></div>
-                        <input type="number" name="quantity" id="quantity" class="form-control" value=1 onchange="calculateCoin()" onkeyup="calculateCoin()">
+                        <input type="number" name="quantity" id="quantity" class="form-control" value=1 value="{{$info->quantity}}" readonly >
                       </div>
                       <div class="col-md-6 mt-2">
                         <div><label class="">{{__('app.longitude')}}:</label></div>
-                        <input type="text" name="longitude" id="longitude" class="form-control" readonly>
+                        <input type="text" name="longitude" id="longitude" class="form-control" readonly value="{{$info->longitude}}">
                       </div>
                       <div class="col-md-6 mt-2">
                         <div class="row">
@@ -107,7 +118,7 @@
                             <div><label class="label-block">{{__('app.earned_coin')}}:</label></div>
                           </div>
                           <div class="col-md-6">
-                            <input type="number" name="coin" id="coin" class="form-control" readonly>
+                            <input type="number" name="coin" id="coin" class="form-control" value="{{$info->quantity}}" readonly>
                           </div>
                         </div>
                       </div>
@@ -154,40 +165,20 @@
   var map = new mapboxgl.Map({
     container: 'tree-map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-77.034084142948, 38.909671288923],
+    center: ['{{$info->longitude}}', '{{$info->latitude}}'],
     zoom: 13,
     scrollZoom: true
   });
 
-  geocoder = new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken, // Set the access token
-    mapboxgl: mapboxgl, // Set the mapbox-gl instance
-    marker: true, // Use the geocoder's default marker style
-    bbox: [-77.210763, 38.803367, -76.853675, 39.052643] // Set the bounding box coordinates
-  });
-
-  map.addControl(geocoder, 'top-left');
-
-  map.addControl(new mapboxgl.NavigationControl());
   var marker = "";
-  map.on('click', function(e) {
-    if (marker) marker.remove();
-    document.getElementById("latitude").value = e.lngLat.lat;
-    document.getElementById("longitude").value = e.lngLat.lng;
     marker = new mapboxgl.Marker({
-        draggable: true,
         color: "#FA7A35"
       })
-      .setLngLat(e.lngLat)
+      .setLngLat({
+        lat: "{{$info->latitude}}",
+        lng: "{{$info->longitude}}"
+      })
       .addTo(map);
-
-    markerFlag = true;
-    marker.on("dragend", function(e) {
-      console.log(e);
-      document.getElementById("latitude").value = e.target._lngLat.lat;
-      document.getElementById("longitude").value = e.target._lngLat.lng;
-    })
-  });
 </script>
 <script src="{{asset('custom/trees/tree.js')}}"></script>
 @endsection

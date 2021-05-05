@@ -361,10 +361,11 @@
       //Planted Tree
       "planted_tree" => "My Planted Trees",
       "planted_add" => "Add Tree",
-      "upload_image_video" => "Upload Picture/Video",
+      "select_image_video" => "Select Picture/Video",
       "planting_detail" => "Planting Details",
       "tree_variety" => "Tree Variety",
       "tree_varietys" => "Tree Varieties",
+      "add_more" => "Add More",
       "save" => "Save",
       "caption_description" => "Caption/Description",
       "earned_coin" => "Earned Coin",
@@ -374,7 +375,11 @@
       "create_variety" => "Create Variety",
       "update_variety" => "Update Variety",
       "variety_name" => "Variety Name",
-      "description" => "Description"
+      "description" => "Description",
+      "add_more_pic_vid" => "Add More Pics or Videos",
+      "follow_up" => "Follow Up",
+      "public" => "Public",
+      "private" => "Private"
   ];
 
  ?>

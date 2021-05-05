@@ -17,10 +17,8 @@ class CreateTreesTable extends Migration
             $table->bigIncrements('id');
             $table->string('caption');
             $table->string('media');
-            $table->string('variety_slug');
+            $table->string('media_type');
             $table->integer('coords');
-            $table->string('share_status');
-            $table->integer('quantity');
             $table->timestamps();
         });
     }

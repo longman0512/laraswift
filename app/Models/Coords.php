@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Coords extends Model
 {
-    protected $fillable = ['caption','latitude', 'longitude'];
+    protected $fillable = ['caption','latitude', 'longitude', 'user_id', 'share_status','variety_slug', 'quantity', ];
     use HasFactory;
 }

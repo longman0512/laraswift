@@ -105,7 +105,7 @@ Route::get('/logout', [
   */
 	Route::get('/trees',[
 		'as'=> '/trees',
-		'uses'=> '\App\Http\Controllers\Tree\TreeController@index',
+		'uses'=> '\App\Http\Controllers\TreeController@index',
 	]);
 
   Route::get('/trees/add',[
@@ -113,9 +113,22 @@ Route::get('/logout', [
 		'uses'=> '\App\Http\Controllers\TreeController@add',
 	]);
 
+  Route::get('/trees/add_more/{coordId}',[
+		'uses'=> '\App\Http\Controllers\TreeController@addMore',
+	]);
+
   Route::put('/trees/create',[
 		'as'=> '/trees/create',
 		'uses'=> '\App\Http\Controllers\TreeController@create',
+	]);
+
+  Route::put('/trees/add_more',[
+		'as'=> '/trees/add_more',
+		'uses'=> '\App\Http\Controllers\TreeController@add_more',
+	]);
+  Route::post('/trees/updateShareStatus',[
+		'as'=> '/trees/updateShareStatus',
+		'uses'=> '\App\Http\Controllers\TreeController@updateShareStatus',
 	]);
 
   Route::resource('/category-tree', '\App\Http\Controllers\TreeCategoryController');
