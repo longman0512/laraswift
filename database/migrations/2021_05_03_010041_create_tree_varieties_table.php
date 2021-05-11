@@ -17,7 +17,12 @@ class CreateTreeVarietiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('media');
             $table->string('description')->nullable();
+            $table->integer('carbon_absorption')->nullable();
+            $table->integer('oxygen_production')->nullable();
+            $table->boolean('nitrogen_fixing')->default(false);
+            $table->string('zone')->nullable();
             $table->timestamps();
         });
     }

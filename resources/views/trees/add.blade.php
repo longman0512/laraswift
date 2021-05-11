@@ -33,11 +33,11 @@
             <div class="card">
               <div class="card-body text-center">
                 <div class="row">
-                  <div id="avatar-holder" class="col-md-12">
-                    <img width="40px" height="100px" class="tree-image-preview" src="{{asset('uploads/tree/avatartree.png')}}" alt="Select your photo/video" id="upload_image">
+                  <div id="avatar-holder" class="col-md-12 variey-tree-image-holder">
+                    <img width="40px" height="100px" class="avatar-image" src="{{asset('uploads/tree/avatartree.png')}}" alt="Select your photo/video" id="upload_image">
                     
                     <video width="290" id="video_display_element" style="display: none;" controls autopaly>
-                      <source src="{{asset('uploads/tree/mov_bbb.ogg')}}" class="video_display">
+                      <source src="{{asset('uploads/tree/mov_bbb.mp4')}}" class="video_display">
                       Your browser does not support HTML5 video.
                     </video>
                     <label class="btn btn-secondary btn-lg d-block mx-auto mt-5 col-sm-12 mb-0" for="uploadFile">

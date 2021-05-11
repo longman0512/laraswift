@@ -379,7 +379,14 @@
       "add_more_pic_vid" => "Add More Pics or Videos",
       "follow_up" => "Follow Up",
       "public" => "Public",
-      "private" => "Private"
+      "private" => "Private",
+      "carbon_dioxide" => "Carbon Dioxide Absorption(Pounds/Year)",
+      "oxygen_production" => "Oxygen Production(Pounds/Year)",
+      "abb_carbon_dioxide" => "CDA",
+      "abb_oxygen_production" => "OxyPro",
+      "abb_pound_year" => "LB/Y",
+      "nitrogen_fixing" => "Nitrogen Fixing",
+      "zone" => "Zone"
   ];
 
  ?>

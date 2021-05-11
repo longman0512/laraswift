@@ -59,20 +59,28 @@ class TreeCategoryController extends Controller
         //
         
         $this->validate($request, [
-            'name' => 'required|min:4|regex:/^[A-Za-z0-9_.,() ]+$/',
-            'description' => 'regex:/^[A-Za-z0-9_.,() ]+$/|nullable|',
+            'name' => 'required|min:2|regex:/^[A-Za-z0-9_.,() ]+$/'
           ],[
-            'name.regex' => 'Invalid Entry! The name only letter and numbers are allowed',
-            'description.regex' => 'Invalid Entry! The description only letter and numbers are allowed',
+            'name.regex' => 'Invalid Entry! The name only letter and numbers are allowed'
           ]);
         $slug = Str::slug(strtolower($request->name), '-');
         $varietyFlag = $this->varieties->whereSlug($slug)->first();
-        
         if (!$varietyFlag) {
+            $uploaded_file = '';
+            if($files = $request->file('uploadFile')){ 
+                $files->move('uploads/tree/', $slug); 
+                $uploaded_file = $slug; 
+            }
+
             $variety = $this->varieties->create([
                 'name' => $request->name,
                 'description' => $request->description,
-                'slug' => $slug
+                'slug' => $slug,
+                'media' => $uploaded_file,
+                'carbon_absorption' => $request->carbon_absorption,
+                'oxygen_production' => $request->oxygen_production,
+                'nitrogen_fixing' => $request->nitrogen_fixing == 'yes' ? true : false,
+                'zone' => $request->zone
             ]);
             if($variety){
                 return redirect()->back()->with('success', 'Variety created successfully');
@@ -122,15 +130,17 @@ class TreeCategoryController extends Controller
         //
         $this->validate($request, [
             'name' => 'required|regex:/^[A-Za-z0-9_.,() ]+$/',
-            'description' => 'regex:/^[A-Za-z0-9_.,() ]+$/',
           ],[
             'name.regex' => 'Invalid Entry! The name only letter and numbers are allowed',
-            'description.regex' => 'Invalid Entry! The description only letter and numbers are allowed',
           ]);
         //   dd($slug);
           $category = $this->varieties->whereSlug($slug)->update([
           'name' => $request->name,
           'description' => $request->description,
+          'carbon_absorption' => $request->carbon_absorption,
+            'oxygen_production' => $request->oxygen_production,
+            'nitrogen_fixing' => $request->nitrogen_fixing == 'yes' ? true : false,
+            'zone' => $request->zone
         ]);
 
           if ($category) {

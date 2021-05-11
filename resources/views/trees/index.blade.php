@@ -111,7 +111,7 @@
                         <label class="label-block">{{__('app.tree_variety')}}:</label>
                       </div>
                       <div class="col-md-6">
-                        <input type="text" class="form-control" readonly value="{{$tree->variety_slug}}">
+                          <input type="text" class="form-control" readonly value="{{$tree->variety}}">
                       </div>
                     </div>
                     <div class="row mb-3">

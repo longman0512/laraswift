@@ -40,8 +40,11 @@
                   <tr>
                     <th class="">{{__('app.variety_name')}}</th>
                     <th class="">{{__('app.description')}}</th>
+                    <th class="">{{__('app.abb_carbon_dioxide')}}({{__('app.abb_pound_year')}})</th>
+                    <th class="">{{__('app.abb_oxygen_production')}}({{__('app.abb_pound_year')}})</th>
+                    <th class="">{{__('app.nitrogen_fixing')}}</th>
+                    <th class="">{{__('app.zone')}}</th>
                     <th class="">{{__('app.created_at')}}</th>
-                    <th class="">{{__('app.updated_at')}}</th>
                     <th class="">{{__('app.action')}}</th>
                   </tr>
                 </thead>
@@ -50,8 +53,11 @@
                   <tr>
                     <td>{{$category->name}}</td>
                     <td>{{Str::limit($category->description,80,' (...)')}}</td>
+                    <td>{{$category->carbon_absorption}}</td>
+                    <td>{{$category->oxygen_production}}</td>
+                    <td>{{$category->nitrogen_fixing}}</td>
+                    <td>{{$category->zone}}</td>
                     <td>{{date('M d, Y',strtotime($category->created_at))}}</td>
-                    <td>{{date('M d, Y',strtotime($category->updated_at))}}</td>
                     <td>
                       <div class="col-md-12">
                         <div class="row">

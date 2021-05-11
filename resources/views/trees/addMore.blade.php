@@ -34,8 +34,8 @@
             <div class="card">
               <div class="card-body text-center">
                 <div class="row">
-                  <div id="avatar-holder" class="col-md-12">
-                    <img width="40px" height="100px" class="tree-image-preview" src="{{asset('uploads/tree/avatartree.png')}}" alt="Select your photo/video" id="upload_image">
+                  <div id="avatar-holder" class="col-md-12 variey-tree-image-holder">
+                    <img width="40px" height="100px" class="avatar-image" src="{{asset('uploads/tree/avatartree.png')}}" alt="Select your photo/video" id="upload_image">
                     
                     <video width="290" id="video_display_element" style="display: none;" controls autopaly>
                       <source src="{{asset('uploads/tree/mov_bbb.ogg')}}" class="video_display">
@@ -47,8 +47,6 @@
                     </label>
                   </div>
                 </div>
-
-
               </div>
               <!-- /.card-body -->
             </div>
@@ -97,7 +95,7 @@
                       <div class="col-md-6 mb-1 mt-2">
                         <div><label class="label-block">{{__('app.tree_variety')}}:</label></div>
                         <select name="variety" id="variety" class="form-control form-control-inline-block">
-                        <option>{{$info->variety_slug}}</option>
+                        <option>{{$variety_name}}</option>
                         </select>
                       </div>
                       <div class="col-md-6 mt-2">

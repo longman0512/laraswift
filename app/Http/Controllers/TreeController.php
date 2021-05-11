@@ -29,20 +29,20 @@ class TreeController extends Controller
 
     public function index()
     {
-        $varieties = $this->varieties->all();
         $user_id = Auth::id();
-        // dd($varieties);
         $result = [];
         $coords = $this->coords->where('user_id', $user_id)->get();
         
         foreach($coords as $pos){
             $tree = $this->tree->where('coords', $pos->id)->get();
+            $variety = $this->varieties->where('slug', '=', $pos->variety_slug)->get();
             $pos['trees'] = $tree;
-            // print_r($pos);
+            $pos['variety'] = $pos->variety_slug;
+            foreach ($variety as $v) {
+                $pos['variety'] = isset($v->name) ? $v->name : $pos->variety_slug;
+            }
             $result[] = $pos;
         }
-        // print_r($result[0]['trees']);
-        // exit;
         return view('trees.index', [
             'trees' => $result
         ]);
@@ -51,6 +51,7 @@ class TreeController extends Controller
     public function add()
     {
         $varieties = $this->varieties->all();
+        
         return view('trees.add', [
             'categories' => $varieties
         ]);
@@ -59,9 +60,19 @@ class TreeController extends Controller
     public function addMore($coordId)
     {
         $coord = $this->coords->find($coordId);
+        $tree = $this->tree->where('coords', $coord->id)->get();
+            
+        $variety = $this->varieties->where('slug', '=', $coord->variety_slug)->get();
 
+        $coord['trees'] = $tree;
+        $variety_name = $coord->variety_slug;
+        
+        foreach ($variety as $v) {
+            $variety_name = isset($v->name) ? $v->name : $coord->variety_slug;
+        }
         return view('trees.addMore', [
-            'info' => $coord
+            'info' => $coord,
+            'variety_name' => $variety_name
         ]);
     }
 
