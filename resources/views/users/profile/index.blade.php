@@ -49,6 +49,7 @@
                       <input type="file" class="d-none"  id="avatarCrop">
                   </label>
                 </div>
+                
                 <div id="avatar-updater" class="col-xs-12 d-none">
                   <div class="row">
                     <div class="col-md-12">

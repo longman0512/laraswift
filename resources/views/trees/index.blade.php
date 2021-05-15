@@ -47,7 +47,10 @@
                       <a class="nav-link white" href="/trees/add_more/{{$tree->id}}">{{__('app.add_more_pic_vid')}}</a>
                     </li>
                     <li class="nav-item">
-                      <div>
+                      <div style="display: flex;
+                      justify-content: center;
+                      align-items: flex-start;
+                      flex-direction: column;">
                         @if($tree->share_status == 'public')
                         <div class="form-check">
                           <input class="form-check-input" type="radio" name="share{{$big_key}}" id="public{{$big_key}}" onclick="upgradeShareStatus('{{$tree->id}}', 'public')" checked />

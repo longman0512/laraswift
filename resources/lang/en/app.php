@@ -386,7 +386,9 @@
       "abb_oxygen_production" => "OxyPro",
       "abb_pound_year" => "LB/Y",
       "nitrogen_fixing" => "Nitrogen Fixing",
-      "zone" => "Zone"
+      "zone" => "Zone",
+      "image" => "Image",
+      "edit_category" => "Edit Category"
   ];
 
  ?>

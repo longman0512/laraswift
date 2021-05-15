@@ -64,12 +64,20 @@ class TreeCategoryController extends Controller
             'name.regex' => 'Invalid Entry! The name only letter and numbers are allowed'
           ]);
         $slug = Str::slug(strtolower($request->name), '-');
+
         $varietyFlag = $this->varieties->whereSlug($slug)->first();
         if (!$varietyFlag) {
             $uploaded_file = '';
-            if($files = $request->file('uploadFile')){ 
-                $files->move('uploads/tree/', $slug); 
-                $uploaded_file = $slug; 
+            if($request->cropedImage){
+                $image_file = $request->cropedImage;
+                list($type, $image_file) = explode(';', $image_file);
+                list(, $image_file)      = explode(',', $image_file);
+                $image_file = base64_decode($image_file);
+                $name= time().'_'.rand(100,999).'.png';
+                $path = public_path('uploads/tree/'.$name);
+                $extension = 'png';
+                file_put_contents($path, $image_file);
+                $uploaded_file = $name; 
             }
 
             $variety = $this->varieties->create([
@@ -134,14 +142,41 @@ class TreeCategoryController extends Controller
             'name.regex' => 'Invalid Entry! The name only letter and numbers are allowed',
           ]);
         //   dd($slug);
-          $category = $this->varieties->whereSlug($slug)->update([
-          'name' => $request->name,
-          'description' => $request->description,
-          'carbon_absorption' => $request->carbon_absorption,
-            'oxygen_production' => $request->oxygen_production,
-            'nitrogen_fixing' => $request->nitrogen_fixing == 'yes' ? true : false,
-            'zone' => $request->zone
-        ]);
+
+        $uploaded_file = '';
+        // dd($request->cropedImage);
+        if($request->cropedImage){
+            $image_file = $request->cropedImage;
+            list($type, $image_file) = explode(';', $image_file);
+            list(, $image_file)      = explode(',', $image_file);
+            $image_file = base64_decode($image_file);
+            $name= time().'_'.rand(100,999).'.png';
+            $path = public_path('uploads/tree/'.$name);
+            $extension = 'png';
+            file_put_contents($path, $image_file);
+            $uploaded_file = $name; 
+            $category = $this->varieties->whereSlug($slug)->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'media' => $uploaded_file,
+                'carbon_absorption' => $request->carbon_absorption,
+                  'oxygen_production' => $request->oxygen_production,
+                  'nitrogen_fixing' => $request->nitrogen_fixing == 'yes' ? true : false,
+                  'zone' => $request->zone
+              ]);
+        } else {
+            $category = $this->varieties->whereSlug($slug)->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'carbon_absorption' => $request->carbon_absorption,
+                  'oxygen_production' => $request->oxygen_production,
+                  'nitrogen_fixing' => $request->nitrogen_fixing == 'yes' ? true : false,
+                  'zone' => $request->zone
+              ]);
+        }
+
+        
+          
 
           if ($category) {
               return redirect()->back()->with('success', 'Variety updated successfully');

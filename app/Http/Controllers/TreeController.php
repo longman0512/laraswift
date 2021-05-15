@@ -86,15 +86,29 @@ class TreeController extends Controller
     public function create(Request $request){
         $uploaded_file = '';
         $file_type = ['mp4', 'ogg', 'webm'];
-        if($files = $request->file('uploadFile')){ 
-            $name = $files->getClientOriginalName(); 
-            $extension = $files->getClientOriginalExtension();
-            $name = str_random(30);
-            // dd($extension);
-
-            $files->move('uploads/tree/', $name); 
+        
+        if($request->cropedImage){
+            $image_file = $request->cropedImage;
+            list($type, $image_file) = explode(';', $image_file);
+            list(, $image_file)      = explode(',', $image_file);
+            $image_file = base64_decode($image_file);
+            $name= time().'_'.rand(100,999).'.png';
+            $path = public_path('uploads/tree/'.$name);
+            $extension = 'png';
+            file_put_contents($path, $image_file);
             $uploaded_file = $name; 
+        } else {
+            if($files = $request->file('uploadFile')){ 
+                $name = $files->getClientOriginalName(); 
+                $extension = $files->getClientOriginalExtension();
+                $name = str_random(30);
+                // dd($extension);
+    
+                $files->move('uploads/tree/', $name); 
+                $uploaded_file = $name;
+            }
         }
+        
         $timestamp = date('Y-m-d H:i:s');
         $coords_id = $this->coords->insertGetId([
             'latitude' => (float)$request->latitude,
@@ -131,14 +145,26 @@ class TreeController extends Controller
     public function add_more(Request $request){
         $uploaded_file = '';
         $file_type = ['mp4', 'ogg', 'webm'];
-        if($files = $request->file('uploadFile')){ 
-            $name = $files->getClientOriginalName(); 
-            $extension = $files->getClientOriginalExtension();
-            $name = str_random(30);
-            // dd($extension);
-
-            $files->move('uploads/tree/', $name); 
+        if($request->cropedImage){
+            $image_file = $request->cropedImage;
+            list($type, $image_file) = explode(';', $image_file);
+            list(, $image_file)      = explode(',', $image_file);
+            $image_file = base64_decode($image_file);
+            $name= time().'_'.rand(100,999).'.png';
+            $path = public_path('uploads/tree/'.$name);
+            $extension = 'png';
+            file_put_contents($path, $image_file);
             $uploaded_file = $name; 
+        } else {
+            if($files = $request->file('uploadFile')){ 
+                $name = $files->getClientOriginalName(); 
+                $extension = $files->getClientOriginalExtension();
+                $name = str_random(30);
+                // dd($extension);
+    
+                $files->move('uploads/tree/', $name); 
+                $uploaded_file = $name;
+            }
         }
         $timestamp = date('Y-m-d H:i:s');
         $coord = $this->coords->find($request->coord_id);
@@ -164,5 +190,10 @@ class TreeController extends Controller
             return redirect()->back()->with('error', 'Ops! an error occured');
         }
 
+    }
+    public function getPlantedTree() {
+        return response()->json(
+            ['status'=>true]
+        );
     }
 }

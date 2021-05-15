@@ -24,13 +24,47 @@
 
         <!-- Main content -->
         <section class="content">
+            <form class="" action="/category-tree/{{ $category->slug }}" method="post">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 mx-auto">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="card">
+                          <div class="card-body text-center">
+                            <div class="row">
+                              <div id="avatar-holder" class="col-md-12">
+                                <div class="variey-tree-image-holder">
+                                  <img width="40px" height="100px" class="avatar-image" src="{{asset('uploads/tree/'.$category->media)}}" alt="Select your photo/video" id="upload_image">
+                                </div>
+                                <video width="290" id="video_display_element" style="display: none;" controls autopaly>
+                                  <source src="{{asset('uploads/tree/mov_bbb.mp4')}}" class="video_display">
+                                  Your browser does not support HTML5 video.
+                                </video>
+                                <label class="btn btn-secondary btn-lg d-block mx-auto mt-5 col-sm-12 mb-0" for="uploadFile">
+                                  {{__('app.select_image_video')}}
+                                  <input type="file" class="d-none" id="uploadFile" name="uploadFile" onchange="showBrowsedImage(this)">
+                                  <input type="hidden" class="d-none" id="cropedImage" name="cropedImage">
+                                </label>
+                              </div>
+                              <div id="avatar-updater" class="col-xs-12 text-center mx-auto" style="display:none;">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div id="upload-demo"></div>
+                                  </div>
+                                  <div class="col-md-12">
+                                    <button type="button"  id="crop_image_btn" class="btn btn-primary col-sm-12">{{__('app.crop_image')}}</button>
+                                    <button type="button" id="crop_image_cancel" name="button" class="btn btn-secondary col-sm-12 mt-1">{{__('app.cancel')}}</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="col-lg-7 col-md-12">
                         @include('layouts.includes.alerts')
                         <div class="row">
                             <div class="col-md-12">
-                              <form class="" action="/category-tree/{{ $category->slug }}" method="post">
+                              
                                 @method('PUT')
                                 <div class="card">
                                     <div class="card-body">
@@ -103,14 +137,58 @@
                                         </div>
                                     </div>
                                 </div>
-                              </form>
+                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </form>
         </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+@endsection
+@section('script')
+<script>
+  var resize = $('#upload-demo').croppie({
+      enableExif: true,
+      enableOrientation: true,    
+      viewport: { // Default { width: 100, height: 100, type: 'square' } 
+          width: 200,
+          height: 200,
+          type: 'square' //square
+      },
+      boundary: {
+          width: 300,
+          height: 300
+      }
+  });
+  
+  $('#crop_image_cancel').on('click', function (ev) {
+    
+    $('#uploadFile').val("");
+    $('#avatar-holder').show();
+    $('#upload_image').show();
+    $('#avatar-updater').hide();
+  });
+  
+  $('#crop_image_btn').on('click', function (ev) {
+    
+    resize.croppie('result', {
+      type: 'canvas',
+      size: 'original'
+    }).then(function (img) {
+      // html = '<img src="' + img + '" />';
+      console.log(img.size);
+      $("#upload_image").attr("src",img);
+      $("#cropedImage").val(img);
+      
+      $('#avatar-holder').show();
+      $('#upload_image').show();
+      $('#avatar-updater').hide();
+    });
+  });
+  </script>
+  <script src="{{asset('custom/trees/tree-category.js')}}"></script>
 @endsection

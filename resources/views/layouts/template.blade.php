@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/crud-style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
     <script src="{{asset('plugins/chart-js/chart.min.js')}}"></script>
     <script src="{{asset('plugins/sweetalert/js/sweetalert.min.js')}}"></script>
 
@@ -82,7 +85,7 @@
 <script src="{{asset('plugins/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('assets/js/custom.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.7/bootstrap-notify.min.js"></script>
-<script src="https://raw.githubusercontent.com/JonSn0w/Hyde/master/js/bootstrap-notify.js"></script>
+{{-- <script src="https://raw.githubusercontent.com/JonSn0w/Hyde/master/js/bootstrap-notify.js"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
 <script>
   

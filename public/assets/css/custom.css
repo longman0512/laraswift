@@ -109,7 +109,7 @@
 }
 
 .add-more {
-  padding: 5px;
+  padding: 8px;
   color: white;
   background: #007bff;
   margin-bottom: 30px;
@@ -147,4 +147,8 @@
   min-height: 260px;
   object-fit: contain;
   width: auto;
+}
+
+.pd-0 {
+  padding: 0px!important;
 }

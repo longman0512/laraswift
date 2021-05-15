@@ -47,31 +47,50 @@ function showBrowsedImage(input) {
     //show browsed image or video
     console.log("input", input)
     if (input.files && input.files[0]) {
+        $("#cropedImage").val('');
         const file = input.files[0];
         const fileType = file['type'];
         console.log(fileType)
         const validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
         const validVideoTypes = ['video/mp4', 'image/webm', 'image/ogg'];
+        $('#upload_image').hide();
         if (validImageTypes.includes(fileType)) {
             //if file type is image, display image in img tag
-            var reader = new FileReader();
-            //image preview show
-            console.log("show Image");
-            $('#upload_image').show();
-            reader.onload = function (e) {
-                console.log(e.target.result);
-                document.getElementById("upload_image").setAttribute('src', e.target.result);
+            // $('#image_file').on('change', function () { 
+                
+                $('#avatar-updater').show();
+                $('#avatar-holder').hide();
+                var reader = new FileReader();
+                  reader.onload = function (e) {
+                    resize.croppie('bind',{
+                      url: e.target.result
+                    }).then(function(){
+                      console.log('jQuery bind complete');
+                    });
+                  }
+                  reader.readAsDataURL(input.files[0]);
+            //   });
+            // var reader = new FileReader();
+            // //image preview show
+            // console.log("show Image");
+            // $('#upload_image').show();
+            // reader.onload = function (e) {
+            //     console.log(e.target.result);
+            //     document.getElementById("upload_image").setAttribute('src', e.target.result);
 
-                $('#upload_image')
-                    .attr('src', e.target.result);
-            };
-            reader.readAsDataURL(input.files[0]);
+            //     $('#upload_image')
+            //         .attr('src', e.target.result);
+            // };
+            // reader.readAsDataURL(input.files[0]);
         } else {
             if (validVideoTypes.includes(fileType)) {
                 //if file type is video, display video in video tag
                 console.log(fileType);
                 $('#video_display_element').show();
-                $('#upload_image').hide();
+                $('#avatar-updater').hide();
+                
+                
+                // $('#upload_image').hide();
                 $('.image-preview').hide()
                 var $source = $('.video_display');
                 console.log(input.files[0]);

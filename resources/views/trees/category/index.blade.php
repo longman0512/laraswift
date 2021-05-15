@@ -38,6 +38,7 @@
                 <table id="dataTable" class="table table-borderless table-striped table-hover">
                   <thead>
                   <tr>
+                    <th class="">{{__('app.image')}}</th>
                     <th class="">{{__('app.variety_name')}}</th>
                     <th class="">{{__('app.description')}}</th>
                     <th class="">{{__('app.abb_carbon_dioxide')}}({{__('app.abb_pound_year')}})</th>
@@ -51,14 +52,17 @@
                 <tbody>
                   @foreach ($categories as $category)
                   <tr>
-                    <td>{{$category->name}}</td>
-                    <td>{{Str::limit($category->description,80,' (...)')}}</td>
-                    <td>{{$category->carbon_absorption}}</td>
-                    <td>{{$category->oxygen_production}}</td>
-                    <td>{{$category->nitrogen_fixing}}</td>
-                    <td>{{$category->zone}}</td>
-                    <td>{{date('M d, Y',strtotime($category->created_at))}}</td>
-                    <td>
+                    <td class="text-center">
+                      <img src={{asset('uploads/tree/'.$category->media)}} style="width: 70%; min-width: 90px; max-width: 110px;"/>
+                    </td>
+                    <td class="align-middle text-center">{{$category->name}}</td>
+                    <td class="align-middle text-center">{{Str::limit($category->description,80,' (...)')}}</td>
+                    <td class="align-middle text-center">{{$category->carbon_absorption}}</td>
+                    <td class="align-middle text-center">{{$category->oxygen_production}}</td>
+                    <td class="align-middle text-center">{{$category->nitrogen_fixing ? "Yes" : "No"}}</td>
+                    <td class="align-middle text-center">{{$category->zone}}</td>
+                    <td class="align-middle text-center">{{date('M d, Y',strtotime($category->created_at))}}</td>
+                    <td class="align-middle text-center">
                       <div class="col-md-12">
                         <div class="row">
                           <div class="mx-1">
