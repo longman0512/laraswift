@@ -72,7 +72,7 @@
                   <li class="nav-item shadow mb-3 mr-2">
                     <a class="nav-link white" id="account-details-tab" role="tab" aria-controls="account-details">{{__('app.planting_detail')}}</a>
                   </li>
-                  <li class="nav-item mb-3 mr-2">
+                  {{-- <li class="nav-item mb-3 mr-2">
                     @if($info->share_status == 'public')
                     <div class="form-check">
                       <input class="form-check-input" type="radio" name="share" id="public" onclick="updateShareStatus('public')" checked />
@@ -94,7 +94,7 @@
                     @endif
                     
                     <input type="hidden" name="share_status" id="share_status" value="public" />
-                  </li>
+                  </li> --}}
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content mt-3 mx-0">

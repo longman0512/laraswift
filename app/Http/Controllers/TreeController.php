@@ -168,7 +168,6 @@ class TreeController extends Controller
         }
         $timestamp = date('Y-m-d H:i:s');
         $coord = $this->coords->find($request->coord_id);
-        $coord->share_status = $request->share;
         $coord->save();
         
         $media_type = in_array($extension, $file_type) ? 'video' : 'image';
@@ -191,9 +190,5 @@ class TreeController extends Controller
         }
 
     }
-    public function getPlantedTree() {
-        return response()->json(
-            ['status'=>true]
-        );
-    }
+    
 }

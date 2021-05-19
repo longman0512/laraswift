@@ -13,8 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
+// Route::middleware('auth:api')->post('/getplantedtree', function (Request $request) {
+//     return response()->json(
+//     ['status'=>true]
+// );
 // });
 
-Route::post('/getPlantedTree', '\App\Http\Controllers\TreeController@getPlantedTree');
+// Route::group(['prefix' => 'v1'], function(){
+//     Route::post('/getplantedtree', '\App\Http\Controllers\TreeController@getplantedtree');
+// });
+
+Route::post('/getplantedtree', '\App\Http\Controllers\APIcontroller@getplantedtree');
